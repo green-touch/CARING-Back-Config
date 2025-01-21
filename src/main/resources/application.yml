@@ -4,11 +4,13 @@ server:
 spring:
   application:
     name: config-service
-#  cloud:
-#    config:
-#      server:
-#        git:
-#          uri: https://github.com/Han-Jeong/msa_study_yml
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/green-touch/CARING-Back-submodule
+          username: ${GITHUB_USERNAME}
+          password: ${GITHUB_PASSWORD}
   rabbitmq:
     host: 127.0.0.1
     port: 5672
