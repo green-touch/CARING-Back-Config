@@ -41,3 +41,11 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+processResources.dependsOn('copyGitSubmodule')
+tasks.register('copyGitSubmodule', Copy) {
+	from './CARING-Back-submodule'
+	include '*.yml'
+	include 'firebase-service-account.json'
+	into 'src/main/resources'
+}
